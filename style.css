@@ -1,0 +1,196 @@
+:root { --bg:#f6f7f9; --panel:#ffffff; --ink:#1f2933; --muted:#667085; --line:#d7dde5; --line-strong:#aab4c2; --navy:#17456b; --soft-blue:#e8f1f8; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Segoe UI","Malgun Gothic",Arial,sans-serif; font-size:14px; }
+header { background:linear-gradient(115deg,#173f5f 0%,#1f6f78 100%); color:#fff; padding:18px 24px; }
+header h1 { margin:0; font-size:21px; }
+header p { margin:6px 0 0; color:rgba(255,255,255,.85); font-size:13px; }
+main { max-width:1480px; margin:0 auto; padding:16px 18px 40px; }
+.panel-head { margin:0 0 10px; }
+.panel-head h2 { margin:0 0 4px; font-size:17px; color:var(--navy); }
+.panel-head span { color:var(--muted); font-size:13px; line-height:1.5; }
+input, select { font-family:inherit; }
+
+    /* ==================== 상담카드 탭 ==================== */
+    .card-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 12px; }
+    .card-toolbar button { border:1px solid var(--line-strong); background:#fff; border-radius:7px; padding:8px 14px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink); }
+    .card-toolbar button.primary { background:var(--navy); border-color:var(--navy); color:#fff; }
+    .card-toolbar button:hover { filter:brightness(.96); }
+    .card-toolbar .card-hint { color:var(--muted); font-size:12px; }
+    .card-workflow { margin:0 0 12px; padding:11px 13px; border:1px solid #c9dce9; border-radius:9px; background:#f2f8fc; color:#26475e; font-size:12.5px; line-height:1.65; }
+    .card-workflow strong { color:#153e5c; }
+    .card-workflow .flow-step { display:inline-block; margin-right:12px; white-space:nowrap; }
+    .card-file-status { display:none; margin:0 0 10px; padding:8px 11px; border-radius:8px; background:#edf8f3; border:1px solid #c8e8d9; color:#21654f; font-size:12px; line-height:1.45; }
+    .card-file-status.show { display:block; }
+    .card-sheet { background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px 16px; overflow-x:auto; }
+    .card-inner { min-width:1330px; }
+    .card-title { text-align:center; font-size:22px; font-weight:800; letter-spacing:2px; margin:0 0 8px; color:#000; }
+    .card-idrow { display:flex; justify-content:flex-end; gap:4px; align-items:center; font-size:13px; font-weight:700; margin:0 0 8px; color:#000; }
+    .card-idrow input { width:76px; height:20px; min-height:0; border:none; border-radius:0; border-bottom:1px solid #888; text-align:center; font-size:13px; padding:2px 2px; background:transparent; }
+    .card-sec-label { font-size:13.5px; font-weight:800; margin:8px 0 5px; color:#000; }
+    table.card-info { width:100%; border-collapse:collapse; table-layout:fixed; margin-bottom:12px; }
+    table.card-info th, table.card-info td { border:1px solid #444; font-size:12.5px; padding:4px 6px; color:#000; }
+    table.card-info th { background:#f1f3f5; font-weight:700; text-align:center; white-space:nowrap; }
+    table.card-info input { width:100%; height:20px; min-height:0; border:none; border-radius:0; font-size:12.5px; padding:1px 2px; background:transparent; color:#000; }
+    .card-ox { display:inline-block; min-width:36px; text-align:center; cursor:pointer; border-bottom:1px dashed #b0b8c1; font-weight:800; font-size:13px; line-height:1.2; user-select:none; color:#17456b; }
+    .card-ox:hover { background:#eef4fa; }
+    table.card-main { width:100%; border-collapse:collapse; table-layout:fixed; }
+    table.card-main th, table.card-main td { border:1px solid #444; font-size:11.5px; padding:2px 3px; text-align:center; vertical-align:middle; color:#000; word-break:break-all; }
+    table.card-main thead th { background:#f1f3f5; font-weight:700; font-size:11.5px; line-height:1.25; padding:4px 2px; }
+    table.card-main input { width:100%; height:18px; min-height:0; border:none; border-radius:0; font-size:11.5px; text-align:center; padding:1px; background:transparent; color:#000; }
+    table.card-main .card-ce { min-height:15px; outline:none; font-size:11px; line-height:1.3; text-align:center; white-space:pre-wrap; }
+    table.card-main .card-typecell { padding:0; }
+    table.card-main select.card-kind { width:100%; height:18px; min-height:0; border:none; border-radius:0; background:transparent; font-size:11px; text-align:center; text-align-last:center; appearance:none; -webkit-appearance:none; padding:1px; color:#000; cursor:pointer; }
+    table.card-main .card-typecell .card-ce { padding:2px 3px; }
+    table.card-main .card-typecell .tk { border-bottom:1px solid #888; font-weight:600; }
+    .card-rowgroup { break-inside:avoid; page-break-inside:avoid; }
+    .card-stage-label { background:#fafbfc; font-size:10.5px; white-space:nowrap; }
+    .card-strat { cursor:pointer; user-select:none; font-size:10.5px; white-space:nowrap; color:#777; }
+    .card-strat.picked { color:#000; font-weight:800; }
+    .card-strat.picked::before { content:'● '; }
+    .card-clear-row { border:none; background:transparent; color:#b44b5f; cursor:pointer; font-size:11px; padding:0; display:block; margin:2px auto 0; }
+    .card-notes { font-size:11.5px; color:#000; margin:8px 0 0; line-height:1.5; }
+    .card-notes p { margin:0; }
+    .card-ac-box { position:absolute; z-index:9999; background:#fff; border:1px solid var(--line-strong); border-radius:6px; box-shadow:0 8px 20px rgba(31,41,51,.18); max-height:340px; overflow-y:auto; min-width:200px; display:none; overscroll-behavior:contain; }
+    .card-ac-box::-webkit-scrollbar { width:14px; }
+    .card-ac-box::-webkit-scrollbar-track { background:#f2f5f8; border-radius:0 6px 6px 0; }
+    .card-ac-box::-webkit-scrollbar-thumb { background:#a9b8c6; border-radius:7px; border:3px solid #f2f5f8; min-height:40px; }
+    .card-ac-box::-webkit-scrollbar-thumb:hover { background:#7f93a6; }
+    .card-ac-item { padding:7px 10px; font-size:12.5px; cursor:pointer; text-align:left; display:flex; justify-content:space-between; gap:10px; }
+    .card-ac-item .ac-meta { color:var(--muted); font-size:11px; flex:0 0 auto; }
+    .card-ac-item:hover, .card-ac-item.hover, .card-ac-item.active { background:var(--soft-blue); }
+    .card-ac-count { position:sticky; top:0; background:#f7fafc; color:var(--muted); font-size:10.5px; padding:3px 10px; border-bottom:1px solid var(--line-strong); text-align:right; letter-spacing:.02em; }
+    .card-filled { background:#f4f9f4; }
+    .card-examcell .card-ce { text-align:left; }
+    .card-date-dup { color:#c0141e; font-weight:800; text-decoration:underline; }
+    @media print {
+      body.print-card header, body.print-card .metrics, body.print-card .tabbar, body.print-card #scorePanel,
+      body.print-card #directoryPanel, body.print-card #jsRegionPanel, body.print-card #deptPanel,
+      body.print-card #comparePanel, body.print-card #qualPanel, body.print-card #fitPanel,
+      body.print-card #universitySummaryPanel, body.print-card #workspace, body.print-card .no-print { display:none !important; }
+      body.print-card main { max-width:none; padding:0; margin:0; }
+      body.print-card #cardPanel { display:block !important; box-shadow:none; border:none; padding:0; margin:0; background:#fff; }
+      body.print-card .card-sheet { border:none; border-radius:0; padding:0; overflow:visible; }
+      body.print-card .card-inner { min-width:0; }
+      body.print-card .card-title { font-size:19px; }
+      body.print-card table.card-info th, body.print-card table.card-info td { border:1px solid #000; font-size:10.5px; padding:3px 4px; }
+      body.print-card table.card-info th { background:#eceff1 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      body.print-card table.card-main th, body.print-card table.card-main td { border:1px solid #000; font-size:9px; padding:1.5px 2px; }
+      body.print-card table.card-main thead th { background:#eceff1 !important; font-size:9px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      body.print-card table.card-main input { height:13px; font-size:9px; }
+      body.print-card table.card-main select.card-kind { height:13px; font-size:9px; }
+      body.print-card table.card-info input { height:15px; font-size:10.5px; }
+      body.print-card .card-ox { border-bottom:none; color:#000; font-size:11px; }
+      body.print-card table.card-main .card-ce { font-size:8.5px; min-height:11px; }
+      body.print-card table.card-main .card-stage-label, body.print-card table.card-main .card-strat { font-size:8.5px; }
+      body.print-card .card-filled { background:#fff; }
+      body.print-card .card-strat { color:#333; }
+      body.print-card .card-date-dup { color:#c0141e !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      body.print-card table.card-main thead { display:table-header-group; }
+    }
+
+    /* ---- 담임교사 상담 기록 ---- */
+    table.card-teacher { margin-bottom:4px; }
+    table.card-teacher th { white-space:normal; }
+    table.card-teacher td { vertical-align:middle; }
+    table.card-teacher .card-tce { min-height:46px; outline:none; font-size:12.5px; line-height:1.5; text-align:left; white-space:pre-wrap; padding:3px 5px; color:#000; }
+    table.card-teacher input { text-align:center; }
+    table.card-teacher tr { break-inside:avoid; page-break-inside:avoid; }
+    .card-teacher-wrap { break-inside:avoid; page-break-inside:avoid; margin-top:14px; }
+    body.print-card table.card-teacher .card-tce { min-height:52px; font-size:10px; }
+    .project-credit { margin:10px 4px 0; color:var(--muted); font-size:11px; line-height:1.55; text-align:right; }
+    @media print { .project-credit { margin-top:5px; color:#444; font-size:8px; } }
+
+    /* ==================== 과거 입결·충원 추이 패널 ==================== */
+    main { max-width:1920px; }
+    .card-workspace { display:grid; grid-template-columns:minmax(0,1fr) 430px; gap:14px; align-items:start; }
+    .history-panel { position:sticky; top:12px; max-height:calc(100vh - 24px); overflow:auto; background:#fff; border:1px solid var(--line); border-radius:10px; box-shadow:0 8px 24px rgba(31,41,51,.10); padding:14px; }
+    .history-panel::-webkit-scrollbar { width:11px; }
+    .history-panel::-webkit-scrollbar-thumb { background:#b0bdc8; border-radius:8px; border:3px solid #fff; }
+    .history-head { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding-bottom:10px; border-bottom:1px solid var(--line); }
+    .history-head h3 { margin:0; color:var(--navy); font-size:17px; }
+    .history-head p { margin:4px 0 0; color:var(--muted); font-size:11.5px; line-height:1.45; }
+    .history-row-chip { flex:0 0 auto; background:var(--soft-blue); color:var(--navy); border:1px solid #c9dce9; border-radius:999px; padding:5px 9px; font-size:11px; font-weight:800; }
+    .history-current { margin:10px 0; padding:10px; border-radius:8px; background:#f7fafc; border:1px solid #e2e8ef; }
+    .history-current strong { display:block; font-size:13.5px; line-height:1.35; color:#153e5c; }
+    .history-current span { display:block; margin-top:3px; color:#596575; font-size:11.5px; line-height:1.4; word-break:keep-all; }
+    .history-alert { margin:9px 0; border-radius:7px; padding:8px 9px; font-size:11.5px; line-height:1.45; }
+    .history-alert.ok { background:#edf8f3; color:#21654f; border:1px solid #c8e8d9; }
+    .history-alert.warn { background:#fff8e7; color:#7a5412; border:1px solid #efddb0; }
+    .history-alert.none { background:#f8f9fb; color:#667085; border:1px solid #e1e5ea; }
+    .history-kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin:10px 0; }
+    .history-kpi { background:#f8fafc; border:1px solid #e2e7ed; border-radius:8px; padding:8px 7px; min-width:0; text-align:center; }
+    .history-kpi span { display:block; color:#6b7280; font-size:10.5px; white-space:nowrap; }
+    .history-kpi strong { display:block; margin-top:3px; color:#1f2933; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .history-section-title { display:flex; justify-content:space-between; align-items:center; gap:8px; margin:12px 0 7px; }
+    .history-section-title h4 { margin:0; font-size:13px; color:#263c4d; }
+    .history-section-title small { color:#7a8491; font-size:10.5px; }
+    .history-records { display:grid; gap:8px; }
+    .history-record { border:1px solid #dbe2e9; border-left:4px solid #3d7c85; border-radius:8px; padding:9px 9px 8px; background:#fff; }
+    .history-record.other { border-left-color:#c28a24; border-style:dashed; background:#fffdf7; }
+    .history-record-top { display:flex; align-items:center; gap:6px; }
+    .history-year { font-size:15px; color:#123f5d; }
+    .history-badge { border-radius:999px; padding:2px 6px; font-size:9.5px; font-weight:800; white-space:nowrap; }
+    .history-badge.exact { background:#e4f4ec; color:#21654f; }
+    .history-badge.near { background:#eaf1f8; color:#285d83; }
+    .history-badge.other { background:#fff0cb; color:#80580c; }
+    .history-score { margin-left:auto; color:#8a939f; font-size:9.5px; }
+    .history-old-type { margin-top:4px; color:#293845; font-size:11.5px; font-weight:700; line-height:1.35; word-break:keep-all; }
+    .history-old-major { margin-top:2px; color:#798390; font-size:10.5px; line-height:1.35; word-break:keep-all; }
+    .history-metric-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:5px; margin-top:8px; }
+    .history-metric { min-width:0; text-align:center; padding:6px 3px; background:#f7f9fb; border-radius:6px; }
+    .history-metric span { display:block; color:#747f8b; font-size:9.5px; white-space:nowrap; }
+    .history-metric b { display:block; margin-top:2px; font-size:12px; color:#202c36; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .history-cutline { margin-top:7px; padding-top:6px; border-top:1px dashed #d9e0e6; color:#5d6874; font-size:10.5px; line-height:1.45; }
+    .history-cutline b { color:#263c4d; }
+    .history-toggle { display:flex; align-items:flex-start; gap:6px; margin:10px 0 2px; color:#4f5b67; font-size:11px; line-height:1.35; cursor:pointer; }
+    .history-toggle input { margin-top:1px; }
+    .history-foot { margin-top:11px; padding-top:9px; border-top:1px solid var(--line); color:#7a8491; font-size:10.5px; line-height:1.5; }
+    .history-empty { padding:24px 8px; text-align:center; color:#7b8794; font-size:12px; line-height:1.6; }
+    .card-rowgroup.history-active td { background:#eef8f7 !important; }
+    .card-rowgroup.history-active tr:first-child td:first-child { box-shadow:inset 4px 0 0 #1f6f78; }
+    @media (max-width:1180px) {
+      .card-workspace { grid-template-columns:1fr; }
+      .history-panel { position:relative; top:auto; max-height:none; order:-1; }
+    }
+    @media print {
+      .history-panel { display:none !important; }
+      .card-workspace { display:block !important; }
+    }
+    /* ==================== /과거 입결·충원 추이 패널 ==================== */
+
+    /* ==================== PDF용 전체 지원안 입결 부록 ==================== */
+    .history-print-appendix { display:none; }
+    .history-print-page { break-after:page; page-break-after:always; }
+    .history-print-page:last-child { break-after:auto; page-break-after:auto; }
+    .history-print-page-head { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin:0 0 6mm; padding-bottom:3mm; border-bottom:2px solid #17456b; color:#000; }
+    .history-print-page-head h2 { margin:0; font-size:17px; color:#17456b; }
+    .history-print-page-head p { margin:2px 0 0; font-size:9px; color:#555; }
+    .history-print-page-meta { font-size:9px; color:#444; text-align:right; line-height:1.45; }
+    .history-print-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5mm; align-items:stretch; }
+    .history-print-card { border:1px solid #7b8794; border-radius:4px; padding:3.2mm; min-height:76mm; break-inside:avoid; page-break-inside:avoid; background:#fff; color:#000; }
+    .history-print-card-head { display:flex; align-items:flex-start; gap:7px; padding-bottom:2.2mm; margin-bottom:2.2mm; border-bottom:1px solid #aab4c2; }
+    .history-print-no { flex:0 0 auto; min-width:22px; height:22px; border-radius:50%; background:#17456b; color:#fff; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .history-print-current { min-width:0; flex:1 1 auto; }
+    .history-print-current strong { display:block; font-size:11.5px; line-height:1.3; word-break:keep-all; }
+    .history-print-current span { display:block; margin-top:1px; font-size:8.5px; color:#4b5563; line-height:1.35; word-break:keep-all; }
+    .history-print-status { margin-left:auto; flex:0 0 auto; padding:2px 5px; border-radius:999px; font-size:7.5px; font-weight:800; white-space:nowrap; border:1px solid #b9c3ce; }
+    .history-print-status.ok { background:#e8f4ee; color:#21654f; }
+    .history-print-status.warn { background:#fff3d6; color:#7a5412; }
+    .history-print-status.none { background:#f1f3f5; color:#667085; }
+    table.history-print-table { width:100%; border-collapse:collapse; table-layout:fixed; }
+    table.history-print-table th, table.history-print-table td { border:1px solid #8f99a5; padding:1.2mm 1mm; font-size:7.4px; line-height:1.3; text-align:center; vertical-align:middle; word-break:break-word; }
+    table.history-print-table th { background:#edf1f4; font-weight:800; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    table.history-print-table td.type, table.history-print-table td.major { text-align:left; }
+    table.history-print-table td.type { font-weight:700; }
+    table.history-print-table td small { display:block; margin-top:1px; font-size:6.7px; color:#555; }
+    .history-print-empty { padding:12mm 3mm; text-align:center; color:#667085; font-size:9px; line-height:1.5; border:1px dashed #aab4c2; border-radius:4px; }
+    .history-print-note { margin-top:2.2mm; font-size:7.2px; line-height:1.45; color:#4b5563; }
+    @media print {
+      body.print-card.print-history .history-print-appendix { display:block !important; break-before:page; page-break-before:always; margin:0; padding:0; }
+      body.print-card:not(.print-history) .history-print-appendix { display:none !important; }
+    }
+    /* ==================== /PDF용 전체 지원안 입결 부록 ==================== */
+
+    /* ==================== /상담카드 탭 ==================== */
+
+@media print { header { display:none !important; } body { background:#fff; } main { max-width:none; padding:0; } }
